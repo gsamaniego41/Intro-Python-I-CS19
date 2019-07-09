@@ -9,9 +9,20 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 
 # YOUR CODE HERE
 
+
+with open('foo.txt') as f:
+    read_data = f.read()
+    print(read_data)
+
+f.closed
+
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
 # then close the file. Open up "bar.txt" and inspect it to make
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+with open('bar.txt', 'w') as b:
+    b.write('I was a fiend\n')
+    b.write('Before I became a teen\n')
+    b.write('I melted microphones instead of cones of ice cream\n')
