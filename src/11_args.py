@@ -6,12 +6,27 @@
 
 # YOUR CODE HERE
 
+
+def f1(num1, num2):
+    return num1 + num2
+
+
 print(f1(1, 2))
 
 # Write a function f2 that takes any number of integer arguments and prints the
 # sum. Google for "python arbitrary arguments" and look for "*args"
 
 # YOUR CODE HERE
+
+
+def f2(*args):
+    total = 0
+    for i in args:
+        total += i
+    return total
+
+# https://www.geeksforgeeks.org/args-kwargs-python/
+
 
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
@@ -21,7 +36,8 @@ print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
 a = [7, 6, 5, 4]
 
 # What thing do you have to add to make this work?
-print(f2(a))    # Should print 22
+print(f2(*a))    # Should print 22
+# https: // stackoverflow.com/questions/48451228/how-to-spread-a-python-array
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
 # it returns that value plus 1. If two arguments, it returns the sum of the
@@ -29,6 +45,12 @@ print(f2(a))    # Should print 22
 
 # YOUR CODE HERE
 
+
+def f3(num1, num2=1):
+    return num1 + num2
+
+
+# https://www.geeksforgeeks.org/default-arguments-in-python/
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
 
@@ -42,10 +64,13 @@ print(f3(8))     # Should print 9
 # Google "python keyword arguments".
 
 # YOUR CODE HERE
+def f4(**kwargs):
+    for i, j in kwargs.items():
+        print(f'key: {i}, value: {j}')
 
-# Should print
-# key: a, value: 12
-# key: b, value: 30
+    # Should print
+    # key: a, value: 12
+    # key: b, value: 30
 f4(a=12, b=30)
 
 # Should print
@@ -60,4 +85,6 @@ d = {
 }
 
 # What thing do you have to add to make this work?
-f4(d)
+f4(**d)
+# returns a string of comma separated key value pairs
+# https://treyhunner.com/2018/04/keyword-arguments-in-python/
