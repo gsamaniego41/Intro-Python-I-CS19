@@ -21,3 +21,21 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+date = datetime.now()
+
+# cmd = input('Enter a month (1-12) and a year (YYYY) separated by a space\n-> ')
+
+
+if len(sys.argv) == 1:
+    print(calendar.month(date.year, date.month))
+elif len(sys.argv) == 2:
+    month = int(sys.argv[1])
+    print(calendar.month(date.year, month))
+elif len(sys.argv) == 3:
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+    print(calendar.month(year, month))
+else:
+    print(
+        'Enter text in this format: [14_cal.py] [month (1-12)] [year (YYYY)] separated by a space')

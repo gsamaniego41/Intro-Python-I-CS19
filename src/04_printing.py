@@ -11,7 +11,7 @@ z = "I like turtles!"
 # Using the printf operator (%), print the following feeding in the values of x,
 # y, and z:
 # x is 10, y is 2.25, z is "I like turtles!"
-print('x is %d, y is %1.2f, z is "%s"' % (x, y, z))
+print('x is %d, y is %.2f, z is "%s"' % (x, y, z))
 # https://pyformat.info/
 # https://www.programiz.com/python-programming/string
 
